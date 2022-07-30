@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Box } from '@mui/material';
+import { Link } from 'react-router-dom';
+import LeftArrowIcon from '../assets/icons/left-arrow.png';
 
 import { exerciseOptions, fetchData, youtubeOptions } from '../utils/fetchData';
 import Detail from '../components/Detail';
@@ -40,7 +42,11 @@ const ExerciseDetail = () => {
   if (!exerciseDetail) return <div>No Data</div>;
 
   return (
-    <Box sx={{ mt: { lg: '96px', xs: '60px' } }}>
+    <Box >
+      <Link to="/">
+        <img style={{ padding:'20px' }} src={LeftArrowIcon} alt="" />
+        {/* <Typography>back</Typography> */}
+      </Link>
       <Detail exerciseDetail={exerciseDetail} />
       <ExerciseVideos exerciseVideos={exerciseVideos} name={exerciseDetail.name} />
       <SimilarExercises targetMuscleExercises={targetMuscleExercises} equipmentExercises={equipmentExercises} />

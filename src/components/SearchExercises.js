@@ -38,19 +38,20 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
 
   return (
     <Stack alignItems="center" mt="37px" justifyContent="center" p="20px">
-      <Typography fontWeight={700} sx={{ fontSize: { lg: '44px', xs: '30px' } }} mb="49px" textAlign="center">
+      <Typography fontWeight={700} sx={{ fontSize: { lg: '44px', xs: '30px' } }} my="60px" textAlign="center">
         Awesome Exercises You <br /> Should Know
       </Typography>
-      <Box position="relative" mb="72px">
+      <Box position="relative">
         <TextField
           height="76px"
-          sx={{ input: { fontWeight: '700', border: 'none', borderRadius: '4px' }, width: { lg: '1170px', xs: '350px' }, backgroundColor: '#fff', borderRadius: '40px' }}
+          sx={{ input: { fontWeight: '700', border: 'none', borderRadius: '4px' }, width: { lg: '1170px', sm2:'350px', xs: '250px' }, backgroundColor: '#fff', borderRadius: '40px' }}
           value={search}
           onChange={(e) => setSearch(e.target.value.toLowerCase())}
           placeholder="Search Exercises"
           type="text"
         />
-        <Button className="search-btn" sx={{ bgcolor: '#FF2625', color: '#fff', textTransform: 'none', width: { lg: '173px', xs: '80px' }, height: '56px', position: 'absolute', right: '0px', fontSize: { lg: '20px', xs: '14px' } }} onClick={handleSearch}>
+        <Button className="search-btn" sx={{  background:'linear-gradient(#132925, #212c2d)', color: '#fff', textTransform: 'none', width: { lg: '173px', xs: '80px' }, height: '56px', position: 'absolute', right: '0px', fontSize: { lg: '20px', xs: '14px' } }} onClick={handleSearch}>
+        {/* sx={{ mt:3, fontSize: {xs: '.7rem',sm:'.8rem'}, padding:{xs: '.3rem .7rem',sm:'.5rem .8rem'} color: '#fff', fontWeight: 'bold', borderRadius:'.7rem' }} */}
           Search
         </Button>
       </Box>

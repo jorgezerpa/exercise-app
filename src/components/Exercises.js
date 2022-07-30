@@ -34,13 +34,13 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
   const paginate = (event, value) => {
     setCurrentPage(value);
 
-    window.scrollTo({ top: 1800, behavior: 'smooth' });
+    window.scrollTo({ top: window.innerHeight+300, behavior: 'smooth' });
   };
 
   if (!currentExercises.length) return <Loader />;
 
   return (
-    <Box id="exercises" sx={{ mt: { lg: '109px' } }} mt="50px" p="20px">
+    <Box id="exercises"  p="20px">
       <Typography variant="h4" fontWeight="bold" sx={{ fontSize: { lg: '44px', xs: '30px' } }} mb="46px">Showing Results</Typography>
       <Stack direction="row" sx={{ gap: { lg: '107px', xs: '50px' } }} flexWrap="wrap" justifyContent="center">
         {currentExercises.map((exercise, idx) => (
